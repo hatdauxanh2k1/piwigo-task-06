@@ -50,9 +50,7 @@
             <strong>rvtree.js</strong>
             <ul>
               <li>Chỉnh sửa</li>
-              <li>
-                Đường dẫn: <code>plugins/rv_menutree/js/rvtree.min.js</code>
-              </li>
+              <li>Đường dẫn: <code>plugins/rv_menutree/js/rvtree.js</code></li>
             </ul>
           </li>
           <li>

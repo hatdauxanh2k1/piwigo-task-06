@@ -1,5 +1,23 @@
 .page-header.page-header-small {
-  margin-top: 10vh;
+  height: 20vh;
+  max-height: 50%;
+}
+#commentList .comment .description {
+  margin-left: 0;
+}
+BLOCKQUOTE {
+  font-family: Roboto, Helvetica, Arial, sans-serif !important;
+  font-size: 16px;
+}
+
+BLOCKQUOTE img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-header.page-header-small {
+  margin-top: 62px;
 }
 
 .navbar.navbar-main {
@@ -8,7 +26,7 @@
   z-index: 1021 !important;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important; /* Tạo bóng cho menu */
   padding: 10px !important;
-  height: 10vh !important;
+  height: 62px !important;
   background-color: rgb(255, 255, 255) !important;
 }
 
@@ -21,9 +39,51 @@
   color: black !important; /* Màu nenu collapse */
 }
 
-@media (max-width: 991.99px) {
+.navbar.navbar-contextual {
+  padding: 8px !important;
+}
+
+/* Mobile (Điện thoại nhỏ) */
+@media (max-width: 480px) {
   .page-header.page-header-small {
     height: 32vh !important;
+    max-height: 50% !important;
+  }
+  #navbar-menubar {
+    background-color: rgb(255, 255, 255);
+  }
+  #navbar-menubar li a:hover {
+    background-color: #cccccc;
+  }
+  #rv-menu-main .tree-menu-child .tree-menu-item-link {
+    text-align: left;
+    padding-left: 16px;
+  }
+}
+
+/* Tablet (Máy tính bảng) */
+@media (min-width: 481px) and (max-width: 991.99px) {
+  .page-header.page-header-small {
+    height: 210px !important;
+    max-height: 50% !important;
+  }
+  #navbar-menubar {
+    background-color: rgb(255, 255, 255);
+  }
+  #navbar-menubar li a:hover {
+    background-color: #cccccc;
+  }
+
+  #rv-menu-main .tree-menu-child .tree-menu-item-link {
+    text-align: left;
+    padding-left: 16px;
+  }
+}
+
+/* Desktop (Máy tính để bàn) */
+@media (min-width: 992px) {
+  .page-header.page-header-small {
+    height: 130px !important;
     max-height: 50% !important;
   }
 }
