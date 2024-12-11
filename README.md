@@ -1,286 +1,276 @@
-<p>
-	<span style="font-size:16px;"><strong>TASK 06</strong></span></p>
-<p>
-	&nbsp;</p>
-<div xmind-vk-document-fragment-id="1733926434970-6856">
-	<ul>
-		<li>
-			<p>
-				<strong>1.Xử lí Form SEARCH</strong></p>
-			<ul>
-				<li>
-					<p>
-						Plugin RV_menutree</p>
-					<ul>
-						<li>
-							<p>
-								menu_category_search.js</p>
-							<ul>
-								<li>
-									<p>
-										Ceate new</p>
-								</li>
-								<li>
-									<p>
-										plugins\rv_menutree\js\menu_category_search.js</p>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<p>
-								rvtree.js</p>
-							<ul>
-								<li>
-									<p>
-										edit</p>
-								</li>
-								<li>
-									<p>
-										plugins\rv_menutree\js\rvtree.min.js</p>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<p>
-								rv_menutree_categories.tpl</p>
-							<ul>
-								<li>
-									<p>
-										Edit</p>
-								</li>
-								<li>
-									<p>
-										plugins\rv_menutree\template\rv_menutree_categories.tpl</p>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<p>
-								main.inc.php</p>
-							<ul>
-								<li>
-									<p>
-										edit</p>
-								</li>
-								<li>
-									<p>
-										plugins\rv_menutree\main.inc.php</p>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<p>
-						Root:</p>
-					<ul>
-						<li>
-							<p>
-								ssearch.php</p>
-							<ul>
-								<li>
-									<p>
-										create new</p>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<p>
-								menu-category-api.php</p>
-							<ul>
-								<li>
-									<p>
-										create new</p>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<p>
-						Theme Default</p>
-					<ul>
-						<li>
-							<p>
-								search_filters.inc.tpl</p>
-							<ul>
-								<li>
-									<p>
-										Edit</p>
-								</li>
-								<li>
-									<p>
-										themes\default\template\include\search_filters.inc.tpl</p>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<p>
-						CODE</p>
-					<ul>
-						<li>
-							<p>
-								search.txt</p>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-	</ul>
-</div>
-<div xmind-vk-document-fragment-id="1733926426115-9911">
-	<ul>
-		<li>
-			<p>
-				2. <strong>Xử lí Plugin Perso Footer</strong></p>
-			<ul>
-				<li>
-					<p>
-						Theme</p>
-					<ul>
-						<li>
-							<p>
-								bootstrap_darkroom</p>
-							<ul>
-								<li>
-									<p>
-										footer.tpl</p>
-									<ul>
-										<li>
-											<p>
-												themes\bootstrap_darkroom\template\footer.tpl</p>
-										</li>
-										<li>
-											<p>
-												edit</p>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<p>
-						Cài Plugin Perso Footer</p>
-					<ul>
-						<li>
-							<p>
-								code Footer</p>
-							<ul>
-								<li>
-									<p>
-										Footer.txt</p>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-	</ul>
-</div>
-<div xmind-vk-document-fragment-id="1733926399921-2351">
-	<ul>
-		<li>
-			<p>
-				<strong>3. Sửa giao di&ecirc;̣n trình bày Theme Bootrap Drakroom</strong></p>
-			<ul>
-				<li>
-					<p>
-						Hi&ecirc;̉n thị PC(4) Mobile(2)</p>
-					<ul>
-						<li>
-							<p>
-								Theme</p>
-							<ul>
-								<li>
-									<p>
-										grid_classes.tpl</p>
-									<ul>
-										<li>
-											<p>
-												themes\bootstrap_darkroom\template\grid_classes.tpl</p>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<p>
-						Custom homepage</p>
-					<ul>
-						<li>
-							<p>
-								PWG Stuffs (Plugin)</p>
-							<ul>
-								<li>
-									<p>
-										note c&acirc;̀n phải chạy cùng Plug-in (đã custom)</p>
-								</li>
-								<li>
-									<p>
-										stuffs_index.css</p>
-									<ul>
-										<li>
-											<p>
-												plugins\PWG_Stuffs\theme\stuffs_index.css</p>
-										</li>
-										<li>
-											<p>
-												edit</p>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<p>
-								ExtentionDescription (Plugin)</p>
-							<ul>
-								<li>
-									<p>
-										functions.inc.php</p>
-									<ul>
-										<li>
-											<p>
-												plugins\ExtendedDescription\include\functions.inc.php</p>
-										</li>
-										<li>
-											<p>
-												edit</p>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<p>
-								theme</p>
-							<ul>
-								<li>
-									<p>
-										index.tpl</p>
-									<ul>
-										<li>
-											<p>
-												themes\bootstrap_darkroom\template\index.tpl</p>
-										</li>
-										<li>
-											<p>
-												edit</p>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-	</ul>
-</div>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  h1 {
+    color: #007bff;
+  }
+  h4 {
+    margin-bottom: 20px;
+  }
+  ol {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  strong {
+    color: #007bff;
+  }
+  code {
+    background: #e7e7e7;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+  }
+  ul {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+  }
+</style>
+<h1>TASK 06</h1>
+<h4>
+  Xem hướng dẫn trực quan hơn tại đây:
+  <a href="https://xmind.ai/share/CMVCwRFw?xid=WmPrQGGd">LINK</a>
+</h4>
+<br />
+<ol>
+  <li>
+    <strong>1. Xử lý Form SEARCH</strong>
+    <ul>
+      <li>
+        Thêm File: <b>search-css.txt</b> vào custom CSS của theme Bootstrap
+        Darkroom
+      </li>
+      <li>
+        <strong>Theme Bootstrap Darkroom</strong>
+        <ul>
+          <li>
+            <strong>custom css</strong>
+            <ul>
+              <li><strong>search-css.txt</strong></li>
+            </ul>
+          </li>
+          <li>
+            <strong>header.tpl</strong>
+            <ul>
+              <li>
+                Đường dẫn:
+                <code>themes/bootstrap_darkroom/template/header.tpl</code>
+              </li>
+              <li>Chỉnh sửa</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Plugin RV_menutree</strong>
+        <ul>
+          <li>
+            <strong>menu_category_search.js</strong>
+            <ul>
+              <li>Tạo mới</li>
+              <li>
+                Đường dẫn:
+                <code>plugins/rv_menutree/js/menu_category_search.js</code>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>rvtree.js</strong>
+            <ul>
+              <li>Chỉnh sửa</li>
+              <li>
+                Đường dẫn: <code>plugins/rv_menutree/js/rvtree.min.js</code>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>rv_menutree_categories.tpl</strong>
+            <ul>
+              <li>Chỉnh sửa</li>
+              <li>
+                Đường dẫn:
+                <code
+                  >plugins/rv_menutree/template/rv_menutree_categories.tpl</code
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>main.inc.php</strong>
+            <ul>
+              <li>Chỉnh sửa</li>
+              <li>Đường dẫn: <code>plugins/rv_menutree/main.inc.php</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Root:</strong>
+        <ul>
+          <li>
+            <strong>ssearch.php</strong>
+            <ul>
+              <li>Tạo mới</li>
+            </ul>
+          </li>
+          <li>
+            <strong>menu-category-api.php</strong>
+            <ul>
+              <li>Tạo mới</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Theme Default</strong>
+        <ul>
+          <li>
+            <strong>search_filters.inc.tpl</strong>
+            <ul>
+              <li>Chỉnh sửa</li>
+              <li>
+                Đường dẫn :
+                <code
+                  >themes/default/template/include/search_filters.inc.tpl</code
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>CODE</strong>
+        <ul>
+          <li><strong>search.txt</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>2. Xử lý Plugin Perso Footer</strong>
+    <ul>
+      <li>
+        <strong>Theme</strong>
+        <ul>
+          <li>
+            <strong>bootstrap_darkroom</strong>
+            <ul>
+              <li>
+                <strong>footer.tpl</strong>
+                <ul>
+                  <li>
+                    Đường dẫn:
+                    <code>themes/bootstrap_darkroom/template/footer.tpl</code>
+                  </li>
+                  <li>Chỉnh sửa</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Cài Plugin Perso Footer</strong>
+        <ul>
+          <li>
+            <strong>Code Footer</strong>
+            <ul>
+              <li><strong>Footer.txt</strong></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>3. Sửa giao diện trình bày Theme Bootstrap Darkroom</strong>
+    <ul>
+      <li>
+        <strong>Hiển thị PC (4) Mobile (2)</strong>
+        <ul>
+          <li>
+            <strong>Theme</strong>
+            <ul>
+              <li>
+                <strong>grid_classes.tpl</strong>
+                <ul>
+                  <li>
+                    Đường dẫn:
+                    <code
+                      >themes/bootstrap_darkroom/template/grid_classes.tpl</code
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Custom homepage</strong>
+        <ul>
+          <li>
+            <strong>PWG Stuffs (Plugin)</strong>
+            <ul>
+              <li>Lưu ý: Cần chạy cùng Plugin (đã custom)</li>
+              <li>
+                <strong>stuffs_index.css</strong>
+                <ul>
+                  <li>
+                    Đường dẫn:
+                    <code>plugins/PWG_Stuffs/theme/stuffs_index.css</code>
+                  </li>
+                  <li>Chỉnh sửa</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>ExtendedDescription (Plugin)</strong>
+            <ul>
+              <li>
+                <strong>functions.inc.php</strong>
+                <ul>
+                  <li>
+                    Đường dẫn:
+                    <code
+                      >plugins/ExtendedDescription/include/functions.inc.php</code
+                    >
+                  </li>
+                  <li>Chỉnh sửa</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Theme</strong>
+            <ul>
+              <li>
+                <strong>index.tpl</strong>
+                <ul>
+                  <li>
+                    Đường dẫn:
+                    <code>themes/bootstrap_darkroom/template/index.tpl</code>
+                  </li>
+                  <li>Chỉnh sửa</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
