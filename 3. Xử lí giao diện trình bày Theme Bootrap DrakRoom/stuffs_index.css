@@ -74,15 +74,20 @@
 .personal_block {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 5px;
   justify-content: center;
-  padding: 16px;
+  padding: 0 !important;
+  margin-bottom: 10px;
+}
+
+.pwgstuffs-container {
+  padding: 0 !important;
 }
 
 .thumbnailCategories {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 !important;
   flex: 1 1 calc(25% - 16px); /* 4 items per row with gap */
   max-width: calc(25% - 16px);
   box-sizing: border-box;
