@@ -1,0 +1,29 @@
+.page-header.page-header-small {
+  margin-top: 10vh;
+}
+
+.navbar.navbar-main {
+  position: fixed !important; /* Sticky Positioning */
+  top: 0 !important; /* Gắn vào đỉnh màn hình */
+  z-index: 1021 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important; /* Tạo bóng cho menu */
+  padding: 10px !important;
+  height: 10vh !important;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.navbar.navbar-main .navbar-brand {
+  color: black !important; /* Màu title menu  */
+}
+
+#navbar-menubar i,
+#navbar-menubar ul li a {
+  color: black !important; /* Màu nenu collapse */
+}
+
+@media (max-width: 991.99px) {
+  .page-header.page-header-small {
+    height: 32vh !important;
+    max-height: 50% !important;
+  }
+}

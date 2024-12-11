@@ -187,6 +187,7 @@
 {/if}
     </div>
 {/if}
+{if !$is_homepage}
     <div id="content" class="{if !empty($smarty.cookies.view) && $smarty.cookies.view == 'list'}content-list{else}content-grid{/if}{if empty($CONTENT_DESCRIPTION)} pt-3{/if}">
 {if !empty($CONTENT)}
     <!-- Start of content -->
@@ -204,7 +205,7 @@ $(document).ready(function() {
 {/strip}{/footer_script}
     <!-- End of categories -->
 {/if}
-
+{/if}
 {if !empty($category_search_results)}
 <div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <h3 class="category_search_results">{'Album results for'|@translate} <em><strong>{$QUERY_SEARCH}</strong></em></h3>
