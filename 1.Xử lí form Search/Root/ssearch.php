@@ -9,16 +9,18 @@ trigger_notify('loc_begin_search');
 
 if (isset($_GET['key-word'], $_GET['category'], $_GET['sub-category'])) {
   $keyword = trim($_GET['key-word']);
-  $category = $_GET['category'];
-  $subCategory = $_GET['sub-category'];
+  $category = $_GET['category'] ? ['category'] : "";
+  $subCategory = $_GET['sub-category'] ? $_GET['sub-category'] : "";
+
 
   // Kiểm tra điều kiện nếu cả ba giá trị không hợp lệ
-  if ($keyword === "" && $category === "0" && $subCategory === "0") {
+  if ($keyword === "" && $category === "" && $subCategory === "") {
     // Chuyển hướng quay lại trang trước
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit(); // Dừng script sau khi chuyển hướng
   }
 }
+
 
 $search = array(
   'mode' => 'AND',
@@ -36,7 +38,7 @@ if (is_a_guest() or is_generic()) {
 
 $words = array();
 if (!empty($_GET['key-word'])) {
-  $words = split_allwords($_GET['key-word']);
+  $words = split_allwords($keyword);
 }
 
 if (count($words) > 0 or in_array('allwords', $fields)) {
@@ -48,36 +50,37 @@ if (count($words) > 0 or in_array('allwords', $fields)) {
 }
 
 $cat_ids = array();
-if (isset($_GET['category']) && $_GET['sub-category'] == 0) {
+if (isset($category) && $subCategory == "" && $category != "") {
   check_input_parameter('category', $_GET, false, PATTERN_ID);
-
   $query = '
 SELECT
     *
   FROM ' . USER_CACHE_CATEGORIES_TABLE . '
-  WHERE cat_id = ' . $_GET['category'] . ';';
+  WHERE cat_id = ' . $category . ';';
 
   $found_categories = query2array($query);
   if (empty($found_categories)) {
     page_not_found(l10n('Requested album does not exist'));
   }
 
-  $cat_ids = array($_GET['category']);
-} else {
+
+
+  $cat_ids = array($category);
+} else if (isset($category) &&  $category != "" &&  $subCategory != "") {
   check_input_parameter('sub-category', $_GET, false, PATTERN_ID);
 
   $query = '
 SELECT
     *
   FROM ' . USER_CACHE_CATEGORIES_TABLE . '
-  WHERE cat_id = ' . $_GET['sub-category'] . ';';
+  WHERE cat_id = ' . $subCategory . ';';
 
   $found_categories = query2array($query);
   if (empty($found_categories)) {
     page_not_found(l10n('Requested album does not exist'));
   }
 
-  $cat_ids = array($_GET['sub-category']);
+  $cat_ids = array($subCategory);
 }
 
 if (count($cat_ids) > 0 or in_array('cat', $fields)) {

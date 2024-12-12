@@ -112,9 +112,14 @@ function renderTreeMenu($tree)
 }
 
 add_event_handler('loc_end_page_tail', 'script_js');
-
+add_event_handler('loc_end_page_header', 'add_css_menu_search', EVENT_HANDLER_PRIORITY_NEUTRAL, 1);
 function script_js()
 {
 	echo '<script src="./plugins/rv_menutree/js/main.js"></script>';
 	echo '<script src="./plugins/rv_menutree/js/menu_category_search.js"></script>';
+}
+
+function add_css_menu_search()
+{
+	echo '<link rel="stylesheet" href="./plugins/rv_menutree/css/menu-search-custom.css">';
 }

@@ -1,0 +1,73 @@
+/* Xử lí CSS SEARCH Và Menu */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.page-header.page-header-small {
+  margin-top: 60px;
+}
+
+.navbar.navbar-main {
+  position: fixed !important; /* Sticky Positioning */
+  top: 0 !important; /* Gắn vào đỉnh màn hình */
+  z-index: 1021 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important; /* Tạo bóng cho menu */
+  padding: 10px !important;
+}
+
+#navbar-menubar i,
+#navbar-menubar ul li a {
+  color: black !important; /* Màu nenu collapse */
+}
+
+.navbar.navbar-contextual {
+  padding: 8px !important;
+}
+
+/* Mobile (Điện thoại nhỏ) */
+@media (max-width: 480px) {
+  .page-header.page-header-small {
+    height: 32vh !important;
+    max-height: 50% !important;
+  }
+  #navbar-menubar {
+    background-color: rgb(255, 255, 255);
+  }
+  #navbar-menubar li a:hover {
+    background-color: #cccccc;
+  }
+  #rv-menu-main .tree-menu-child .tree-menu-item-link {
+    text-align: left;
+    padding-left: 16px;
+  }
+}
+
+/* Tablet (Máy tính bảng) */
+@media (min-width: 481px) and (max-width: 991.99px) {
+  .page-header.page-header-small {
+    height: 210px !important;
+    max-height: 50% !important;
+  }
+  #navbar-menubar {
+    background-color: rgb(255, 255, 255);
+  }
+  #navbar-menubar li a:hover {
+    background-color: #cccccc;
+  }
+
+  #rv-menu-main .tree-menu-child .tree-menu-item-link {
+    text-align: left;
+    padding-left: 16px;
+  }
+}
+
+/* Desktop (Máy tính để bàn) */
+@media (min-width: 992px) {
+  .page-header.page-header-small {
+    height: 130px !important;
+    max-height: 50% !important;
+  }
+}
+
+/* END CSS SEARCH Và Menu */

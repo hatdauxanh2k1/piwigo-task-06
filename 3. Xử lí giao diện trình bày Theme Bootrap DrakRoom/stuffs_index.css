@@ -70,8 +70,23 @@
 * html .middle_block {
   overflow-y: visible;
 }
+
+/* Fix Title Block Overflow */
+.pwgstuffs-navbar:has(.navbar-header) .navbar-brand {
+  word-wrap: break-word; /* Tự động ngắt dòng nếu chuỗi quá dài */
+  word-break: break-word; /* Ngắt dòng trong các từ quá dài */
+  overflow-wrap: break-word; /* Tương tự word-wrap nhưng hỗ trợ chuẩn mới */
+  white-space: normal; /* Cho phép xuống dòng nếu cần */
+  overflow: hidden; /* Ẩn phần tràn ra ngoài */
+  text-overflow: ellipsis; /* Hiển thị dấu '...' nếu nội dung bị cắt */
+}
+.pwgstuffs-navbar:has(.navbar-header) {
+  padding: 10px;
+}
+/* END Fix Title Block Overflow */
+
 /* CSS CATEGORIE */
-.personal_block {
+.personal_block:has(.thumbnailCategories) {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
@@ -84,7 +99,7 @@
   padding: 0 !important;
 }
 
-.thumbnailCategories {
+.personal_block:has(.thumbnailCategories) .thumbnailCategories {
   list-style: none;
   margin: 0;
   padding: 0 !important;
@@ -93,7 +108,7 @@
   box-sizing: border-box;
 }
 
-.thumbnailCategories li {
+.personal_block:has(.thumbnailCategories) .thumbnailCategories li {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -104,71 +119,97 @@
   flex-direction: column;
 }
 
-.thumbnailCategories li:hover {
+.personal_block:has(.thumbnailCategories) .thumbnailCategories li:hover {
   transform: scale(1.02);
 }
 
-.thumbnailCategory {
+.personal_block:has(.thumbnailCategories) .thumbnailCategory {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Giãn đều nội dung */
 }
 
-.illustration {
+.personal_block:has(.thumbnailCategories)
+  .thumbnailCategory:has(.illustration)
+  .illustration {
   flex-grow: 1;
 }
 
-.illustration img {
+.personal_block:has(.thumbnailCategories)
+  .thumbnailCategory:has(.illustration)
+  .illustration
+  img {
   height: 150px;
   width: 100%;
   object-fit: cover;
 }
 
-.description {
+.personal_block:has(.thumbnailCategories)
+  .thumbnailCategory:has(.illustration)
+  .description {
   padding: 16px;
   flex-shrink: 0;
   white-space: nowrap;
 }
 
-.description h3 {
+.personal_block:has(.thumbnailCategories)
+  .thumbnailCategory:has(.illustration)
+  .description
+  h3 {
   margin: 12px 0;
   font-size: 1.1rem;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.description h3 a {
+.personal_block:has(.thumbnailCategories)
+  .thumbnailCategory:has(.illustration)
+  .description
+  h3
+  a {
   text-decoration: none;
   color: #007bff;
   transition: color 0.3s;
 }
 
-.description h3 a:hover {
+.personal_block:has(.thumbnailCategories)
+  .thumbnailCategory:has(.illustration)
+  .description
+  h3
+  a:hover {
   color: #0056b3;
 }
 
-.description .text {
+.personal_block:has(.thumbnailCategories)
+  .thumbnailCategory:has(.illustration)
+  .description
+  .text {
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.Nb_images {
+.personal_block:has(.thumbnailCategories)
+  .thumbnailCategory:has(.illustration)
+  .description
+  .text
+  .Nb_images {
   font-size: 0.9rem;
   color: #555;
 }
 
 /* Responsive design */
 @media (max-width: 1024px) {
-  .thumbnailCategories {
+  .personal_block:has(.thumbnailCategories) .thumbnailCategories {
     flex: 1 1 calc(33.333% - 16px); /* 3 items per row */
     max-width: calc(33.333% - 16px);
   }
 }
 
 @media (max-width: 480px) {
-  .thumbnailCategories {
+  .personal_block:has(.thumbnailCategories) .thumbnailCategories {
     flex: 1 1 calc(50% - 16px); /* 2 items per row */
     max-width: calc(50% - 16px);
   }
 }
+/* END CATEGORIES */
