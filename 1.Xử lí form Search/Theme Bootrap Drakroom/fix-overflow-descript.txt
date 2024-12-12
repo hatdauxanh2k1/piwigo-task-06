@@ -1,0 +1,10 @@
+.description {
+  word-wrap: break-word; 
+  word-break: break-word; 
+  overflow-wrap: break-word; 
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 100%; 
+}
