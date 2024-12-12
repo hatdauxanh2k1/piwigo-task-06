@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function categoryMenuSearch(data) {
   const categorySelect = document.getElementById('category-list-menu');
   const subCategorySelect = document.getElementById('sub-category-list-menu');
+  const inputSearch = document.getElementById('btn-search-input');
 
   function getMaxChars(element) {
     const elementWidth = element.offsetWidth;
@@ -71,7 +72,7 @@ function categoryMenuSearch(data) {
   function restoreSelections() {
     const savedCategoryId = localStorage.getItem('selectedCategory');
     const savedSubCategoryId = localStorage.getItem('selectedSubCategory');
-
+    const savedKeySearch = localStorage.getItem('keywordSearch');
     if (savedCategoryId) {
       categorySelect.value = savedCategoryId;
       updateSubCategoryOptions();
@@ -80,12 +81,20 @@ function categoryMenuSearch(data) {
         subCategorySelect.value = savedSubCategoryId;
       }
     }
+
+    if (savedKeySearch) {
+      inputSearch.value = savedKeySearch;
+    }
   }
+
+  inputSearch.addEventListener('input', function () {
+    const keySearch = inputSearch.value;
+    localStorage.setItem('keywordSearch', keySearch);
+  });
 
   function saveSelections() {
     const selectedCategoryId = categorySelect.value;
     const selectedSubCategoryId = subCategorySelect.value;
-
     localStorage.setItem('selectedCategory', selectedCategoryId);
     localStorage.setItem('selectedSubCategory', selectedSubCategoryId);
   }

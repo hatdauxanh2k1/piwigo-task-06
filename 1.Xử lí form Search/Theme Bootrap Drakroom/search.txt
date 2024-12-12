@@ -62,6 +62,7 @@
     method="get">
     <div class="search-bar search-bar-horizontal">
       <input
+        id="btn-search-input"
         class="form-control"
         name="key-word"
         placeholder="Enter keyword"

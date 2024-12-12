@@ -187,6 +187,7 @@
 {/if}
     </div>
 {/if}
+
 {if !$is_homepage}
     <div id="content" class="{if !empty($smarty.cookies.view) && $smarty.cookies.view == 'list'}content-list{else}content-grid{/if}{if empty($CONTENT_DESCRIPTION)} pt-3{/if}">
 {if !empty($CONTENT)}
@@ -197,7 +198,7 @@
 
 {if !empty($CATEGORIES)}
     <!-- Start of categories -->
-    
+    {$CATEGORIES}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
   $('#content .col-outer .card-body:has(> .card-title)').equalHeights();
