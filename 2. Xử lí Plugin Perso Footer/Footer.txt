@@ -21,7 +21,7 @@
   }
   .footer {
     background-color: #24262b;
-    padding: 70px 0 70px 32px;
+    padding: 30px 0 0 32px;
     margin: 0 auto;
   }
   .footer-col {
