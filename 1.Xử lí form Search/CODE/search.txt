@@ -56,7 +56,7 @@
 </p>
 <div class="container my-5">
   <!-- Horizontal Menu (Responsive) -->
-  <form action="./themes/bootstrap_darkroom/functions/ssearch.php" id="search-form" method="get">
+  <form action="./plugins/rv_menutree/search-menu-category.php" id="search-form" method="get">
     <div class="search-bar search-bar-horizontal">
       <input class="form-control" id="btn-search-input" name="key-word" placeholder="Enter keyword" style="height: fit-content" type="text" /> <select class="form-select" id="category-list-menu" name="category-menu-search">
         <option value="0">---Category---</option>

@@ -8,13 +8,13 @@ function extdesc_get_cat_thumb($elem_id)
 {
   global $template, $user;
 
+
   $elem_id = intval($elem_id);
   if ($elem_id <= 0) {
     return '';
   }
-
   $query = '
-SELECT
+  SELECT
   cat.id,
   cat.name,
   cat.comment,
@@ -24,15 +24,31 @@ SELECT
   uc.count_images,
   uc.count_categories,
   img.path
-FROM ' . CATEGORIES_TABLE . ' AS cat
-  INNER JOIN ' . USER_CACHE_CATEGORIES_TABLE . ' as uc
-    ON cat.id = uc.cat_id AND uc.user_id = ' . $user['id'] . '
+    FROM ' . CATEGORIES_TABLE . ' AS cat
+  INNER JOIN ' . USER_CACHE_CATEGORIES_TABLE . ' AS uc
+    ON cat.id = uc.cat_id
   INNER JOIN ' . IMAGES_TABLE . ' AS img
     ON img.id = uc.user_representative_picture_id
-WHERE cat.id = ' . $elem_id . ';';
-  $result = pwg_query($query);
+  WHERE cat.id = ' . $elem_id . ';';
 
-  if ($result and $category = pwg_db_fetch_assoc($result)) {
+
+  $result = pwg_query($query);
+  $category = pwg_db_fetch_assoc($result);
+
+  if ($category === NULL) {
+    $category = load_from_cache($elem_id);
+    if ($category === NULL) {
+      // Nếu cache cũng không có dữ liệu, thực hiện logic xử lý mặc định
+      $category = [];
+      save_to_cache($elem_id, $category);
+    }
+  } else {
+    save_to_cache($elem_id, $category);
+  }
+
+
+  if ($result and $category) {
+
     $p = array(
       'ID'    => $category['id'],
       'TN_SRC'   => $category['path'],
@@ -64,11 +80,6 @@ WHERE cat.id = ' . $elem_id . ';';
       $p
     );
 
-    // echo "<pre>";
-    // var_dump($category);
-    // var_dump($p);
-    // echo "</pre>";
-    // exit();
     $template->set_filename('extended_description_content', realpath(EXTENDED_DESC_PATH . 'template/cat.tpl'));
     return $template->parse('extended_description_content', true);
   }
@@ -658,4 +669,48 @@ function extdesc_get_deriv_regex()
     'XXL',
     'xxlarge'
   ));
+}
+
+function save_to_cache($key, $data)
+{
+  // Đường dẫn thư mục cache
+  $cache_dir = PHPWG_ROOT_PATH . '_data/tmp/';
+  // Tạo tên file cache dựa trên $key
+  $cache_file = $cache_dir . 'cache_categories_' . md5($key) . '.json';
+
+  // Kiểm tra xem thư mục cache có tồn tại không, nếu không thì tạo mới
+  if (!is_dir($cache_dir)) {
+    mkdir($cache_dir, 0755, true);
+  }
+
+  // Nếu file cache đã tồn tại, kiểm tra nội dung
+  if (file_exists($cache_file)) {
+    $current_data = json_decode(file_get_contents($cache_file), true);
+
+    // Nếu dữ liệu mới giống với dữ liệu hiện tại, không cần ghi đè
+    if ($current_data === $data) {
+      return;
+    }
+  }
+
+  // Chuyển đổi dữ liệu sang JSON và lưu vào file
+  file_put_contents($cache_file, json_encode($data, JSON_PRETTY_PRINT));
+}
+
+
+function load_from_cache($key)
+{
+  // Đường dẫn thư mục cache
+  $cache_dir = PHPWG_ROOT_PATH . '_data/tmp/';
+  // Tên file cache dựa trên $key
+  $cache_file = $cache_dir . 'cache_categories_' . md5($key) . '.json';
+
+  // Kiểm tra nếu file tồn tại và không hết hạn
+  if (file_exists($cache_file)) {
+    $data = json_decode(file_get_contents($cache_file), true);
+    return $data;
+  }
+
+  // Trả về null nếu không tìm thấy dữ liệu trong cache
+  return null;
 }
