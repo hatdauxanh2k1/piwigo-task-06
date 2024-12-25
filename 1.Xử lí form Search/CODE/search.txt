@@ -1,9 +1,4 @@
-<link
-  crossorigin="anonymous"
-  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
-  integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
-  referrerpolicy="no-referrer"
-  rel="stylesheet" />
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" referrerpolicy="no-referrer" rel="stylesheet" />
 <p>
   <style type="text/css">
     /* Tùy chỉnh giao diện */
@@ -33,17 +28,22 @@
 
     #category-list-menu,
     #sub-category-list-menu {
-      white-space: nowrap; /* Ngăn văn bản xuống dòng */
-      overflow: hidden; /* Ẩn phần văn bản vượt quá chiều rộng */
-      text-overflow: ellipsis; /* Hiển thị dấu ba chấm '...' khi văn bản quá dài */
+      white-space: nowrap;
+      /* Ngăn văn bản xuống dòng */
+      overflow: hidden;
+      /* Ẩn phần văn bản vượt quá chiều rộng */
+      text-overflow: ellipsis;
+      /* Hiển thị dấu ba chấm '...' khi văn bản quá dài */
     }
 
     /* Giới hạn chiều rộng cho từng mục trong dropdown */
     #category-list-menu option,
     #sub-category-list-menu option {
-      white-space: nowrap; /* Ngăn các mục trong dropdown xuống dòng */
+      white-space: nowrap;
+      /* Ngăn các mục trong dropdown xuống dòng */
       overflow: hidden;
-      text-overflow: ellipsis; /* Thêm ba chấm khi tên quá dài */
+      text-overflow: ellipsis;
+      /* Thêm ba chấm khi tên quá dài */
       width: 50px;
     }
 
@@ -56,30 +56,13 @@
 </p>
 <div class="container my-5">
   <!-- Horizontal Menu (Responsive) -->
-  <form
-    action="ssearch.php"
-    id="search-form"
-    method="get">
+  <form action="./themes/bootstrap_darkroom/functions/ssearch.php" id="search-form" method="get">
     <div class="search-bar search-bar-horizontal">
-      <input
-        id="btn-search-input"
-        class="form-control"
-        name="key-word"
-        placeholder="Enter keyword"
-        style="height: fit-content"
-        type="text" />
-      <select
-        class="form-select"
-        id="category-list-menu"
-        name="category">
+      <input class="form-control" id="btn-search-input" name="key-word" placeholder="Enter keyword" style="height: fit-content" type="text" /> <select class="form-select" id="category-list-menu" name="category-menu-search">
         <option value="0">---Category---</option>
-      </select>
-      <select
-        class="form-select"
-        id="sub-category-list-menu"
-        name="sub-category">
-        <option value="0">---Sub-Category---</option></select
-      ><button class="btn btn-success">Search</button>
+      </select> <select class="form-select" id="sub-category-list-menu" name="sub-category-menu-search">
+        <option value="0">---Sub-Category---</option>
+      </select><button class="btn btn-success">Search</button>
     </div>
   </form>
 </div>

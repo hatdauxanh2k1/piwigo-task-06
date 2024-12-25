@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  fetch('./menu-category-api.php')
+  fetch('./plugins/rv_menutree/menu-category-api.php')
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok ' + response.statusText);
@@ -7,11 +7,19 @@ document.addEventListener('DOMContentLoaded', function () {
       return response.json();
     })
     .then((data) => {
+      console.log(data);
       categoryMenuSearch(data);
     })
     .catch((error) => {
       console.error('Có lỗi xảy ra:', error);
     });
+
+  if (window.location.href.includes('search/psk')) {
+    const mcsContainer = document.querySelector('.mcs-container');
+    if (mcsContainer) {
+      mcsContainer.remove();
+    }
+  }
 });
 
 function categoryMenuSearch(data) {

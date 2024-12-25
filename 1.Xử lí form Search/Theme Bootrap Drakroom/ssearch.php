@@ -1,5 +1,5 @@
 <?php
-define('PHPWG_ROOT_PATH', './');
+define('PHPWG_ROOT_PATH', '../../../');
 include_once(PHPWG_ROOT_PATH . 'include/common.inc.php');
 include_once(PHPWG_ROOT_PATH . 'include/functions_search.inc.php');
 
@@ -7,10 +7,10 @@ check_status(ACCESS_GUEST);
 
 trigger_notify('loc_begin_search');
 
-if (isset($_GET['key-word'], $_GET['category'], $_GET['sub-category'])) {
+if (isset($_GET['key-word'], $_GET['category-menu-search'], $_GET['sub-category-menu-search'])) {
   $keyword = trim($_GET['key-word']);
-  $category = $_GET['category'] ? ['category'] : "";
-  $subCategory = $_GET['sub-category'] ? $_GET['sub-category'] : "";
+  $category = $_GET['category-menu-search'] ? $_GET['category-menu-search'] : "";
+  $subCategory = $_GET['sub-category-menu-search'] ? $_GET['sub-category-menu-search'] : "";
 
 
   // Kiểm tra điều kiện nếu cả ba giá trị không hợp lệ
@@ -51,7 +51,7 @@ if (count($words) > 0 or in_array('allwords', $fields)) {
 
 $cat_ids = array();
 if (isset($category) && $subCategory == "" && $category != "") {
-  check_input_parameter('category', $_GET, false, PATTERN_ID);
+  check_input_parameter('category-menu-search', $_GET, false, PATTERN_ID);
   $query = '
 SELECT
     *
@@ -67,7 +67,7 @@ SELECT
 
   $cat_ids = array($category);
 } else if (isset($category) &&  $category != "" &&  $subCategory != "") {
-  check_input_parameter('sub-category', $_GET, false, PATTERN_ID);
+  check_input_parameter('sub-category-menu-search', $_GET, false, PATTERN_ID);
 
   $query = '
 SELECT
